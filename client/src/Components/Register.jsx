@@ -10,7 +10,7 @@ function Register(props) {
     const modalRef = useRef(null)
     const height = 455
     const [err,setErr] = useState()
-    const BASEURL = 'http://localhost:8800/api/'
+    const BASEURL = 'https://atg-r2-api.vercel.app/api/'
     
     axios.defaults.withCredentials = true
     const [registerForm, setRegisterForm] = useState({
