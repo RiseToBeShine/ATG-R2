@@ -13,7 +13,8 @@ const app = express()
 
 dotenv.config()
 app.use(cors({
-    origin: ['https://atg-r2-client.vercel.app'],
+    origin: ['https://atg-r2-client.vercel.app','*'],
+    methods: ['GET,HEAD,PUT,PATCH,POST,DELETE'],
     credentials: true
 }))
 const PORT = process.env.PORT || 8800
