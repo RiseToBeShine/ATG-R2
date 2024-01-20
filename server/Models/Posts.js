@@ -4,6 +4,9 @@ const PostSchema = mongoose.Schema({
     userId: {
         type: String
     },
+    username: {
+        type: String
+    },
     imgUrl: {
         type: String
     },

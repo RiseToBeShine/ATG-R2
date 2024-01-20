@@ -3,16 +3,17 @@ import User from "../Models/User.js"
 import Comment from "../Models/Comments.js"
 
 export const createPost = async(req,res,next) => {
-    const newPost = new Posts({
-        userId : req.user.id,
-        ...req.body
-    })
     try {
-        const savedPost = await newPost.save()
         const user = await User.findById(req.user.id);
         if (!user) {
             return res.status(404).json({ message: "User not found" });
         }
+        const newPost = new Posts({
+            userId : req.user.id,
+            username: user.name,
+            ...req.body
+        })
+        const savedPost = await newPost.save()
         user.posts.push(savedPost._id);
         await user.save();
         res.status(200).json(savedPost)

@@ -81,7 +81,7 @@ const Cards = (props) => {
         <Card.Header className='d-flex justify-content-between'>
             <div>
                 <img src="https://cdn.iconscout.com/icon/free/png-256/free-avatar-370-456322.png?f=webp" className='border-circle' style={{width:'2rem'}} alt="" />
-                <span style={{fontSize:'0.8rem' , fontWeight: '600', marginLeft: '1rem'}}>Mradul</span>
+                <span style={{fontSize:'0.8rem' , fontWeight: '600', marginLeft: '1rem'}}>{props.name}</span>
             </div>
             <div>
                 {err}

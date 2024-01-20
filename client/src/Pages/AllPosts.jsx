@@ -35,10 +35,10 @@ const AllPosts = ({mobile}) => {
         console.log(newPost)
     }
 
-    const saveNewPost = async () => {
+    const saveNewPost = async (downloadURL) => {
         const url = BASE_URL + 'post/'
         console.log(newPost)
-        await axios.post(url,{imgUrl: newPost.imgUrl, caption: newPost.caption}).then(()=>console.log("posted successfully"))
+        await axios.post(url,{imgUrl: downloadURL, caption: newPost.caption}).then(()=>console.log("posted successfully"))
         .catch((err)=>console.log("err",err))
     }
 
@@ -65,13 +65,13 @@ const AllPosts = ({mobile}) => {
                 console.log(error)
             },
             () => {
-                getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
+                getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
                     console.log('File available at', downloadURL);
                     setNewPost(prev=>({...prev, imgUrl: downloadURL}))
+                    saveNewPost(downloadURL)
                     setProgress(<span style={{fontSize: '0.75rem',fontWeight: '500', color: 'green'}}>Uploaded</span>)
                 }).then(()=>{
                     console.log(newPost)
-                    saveNewPost()
                 })
             })
     }
@@ -132,6 +132,7 @@ const AllPosts = ({mobile}) => {
                                 caption={post.caption}
                                 img={post.imgUrl}
                                 id={post._id}
+                                name= {post.username}
                                 likedBy = {post.likedBy.includes(currUserId)}
                             />
                         ))

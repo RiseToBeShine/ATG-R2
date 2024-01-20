@@ -41,7 +41,7 @@ function Register(props) {
                     avatarUrl: registerForm.img,
                     email: registerForm.email,
                     password: registerForm.password
-                },config).then((res)=>{
+                }).then((res)=>{
                     updateUser(registerForm.name)
                     setErr(<span style={{fontSize:'0.65rem', fontWeight:'500', color: 'green'}}> User Register Successful... </span>)
                     console.log(res)
@@ -148,10 +148,10 @@ function Register(props) {
                                 <Form.Control onChange={handleRegisterChange} name='email' style={{borderRadius:'0px', background:'#F7F8FA', border:'1px solid #D9D9DB', fontWeight:'500', fontSize:'0.75rem', color: '#8A8A8A', padding:'0.5rem 0.8rem'}} placeholder='Email'/>
                             </Row>
                             <Row className='g-0'>
-                                <Form.Control onChange={handleRegisterChange} name='password' style={{borderRadius:'0px', background:'#F7F8FA', border:'1px solid #D9D9DB', fontWeight:'500', fontSize:'0.75rem', color: '#8A8A8A', padding:'0.5rem 0.8rem'}} placeholder='Password'/>
+                                <Form.Control onChange={handleRegisterChange} type='password' name='password' style={{borderRadius:'0px', background:'#F7F8FA', border:'1px solid #D9D9DB', fontWeight:'500', fontSize:'0.75rem', color: '#8A8A8A', padding:'0.5rem 0.8rem'}} placeholder='Password'/>
                             </Row>
                             <Row className='g-0'>
-                                <Form.Control onChange={handleRegisterChange} name='confirmPassword' style={{borderRadius:'0px', background:'#F7F8FA', border:'1px solid #D9D9DB', fontWeight:'500', fontSize:'0.75rem', color: '#8A8A8A', padding:'0.5rem 0.8rem'}} placeholder='Confim Password'/>
+                                <Form.Control onChange={handleRegisterChange} type='password' name='confirmPassword' style={{borderRadius:'0px', background:'#F7F8FA', border:'1px solid #D9D9DB', fontWeight:'500', fontSize:'0.75rem', color: '#8A8A8A', padding:'0.5rem 0.8rem'}} placeholder='Confim Password'/>
                             </Row>
                             {
                                 props.mobile?
