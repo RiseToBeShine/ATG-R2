@@ -11,7 +11,7 @@ const AllPosts = ({mobile}) => {
     const storage = getStorage()
     const {username, updateUser, currUserId} = useContext(UserContext)
     const [postId,setPostId] = useState('')
-    const BASE_URL = 'http://localhost:8800/api/'
+    const BASE_URL = 'https://atg-r2-api.vercel.app/api/'
     const [posts, setPosts] = useState([])
     const [newPost, setNewPost] = useState({
         caption: '',
