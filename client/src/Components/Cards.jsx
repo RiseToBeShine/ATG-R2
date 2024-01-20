@@ -11,7 +11,7 @@ const Cards = (props) => {
     // const [currlike,setCurrLike] = useState(props.likedBy)
     let currlike = props.likedBy
     console.log(currlike, " ", props.likedBy)
-    const BASE_URL = "http://localhost:8800/api/"
+    const BASE_URL = "https://atg-r2-api.vercel.app/api/"
 
     useEffect(()=>{
         console.log(props.likedBy)
