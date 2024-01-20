@@ -14,7 +14,7 @@ const ForgotPassword = () => {
 
     const handleSendEmail = () => {
         setBtnState('Sending...')
-        axios.post('http://localhost:8800/api/auth/forgot-password', {email: email}).then(()=>{
+        axios.post('https://atg-r2-api.vercel.app/api/auth/forgot-password', {email: email}).then(()=>{
             console.log('success')
             setBtnState('SendAgain')
             setErr(<div style={{fontSize: '0.75rem', color: 'green', fontWeight: '500'}}>Email Sent...</div>)
