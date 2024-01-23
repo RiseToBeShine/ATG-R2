@@ -72,6 +72,8 @@ const AllPosts = ({mobile}) => {
                     setProgress(<span style={{fontSize: '0.75rem',fontWeight: '500', color: 'green'}}>Uploaded</span>)
                 }).then(()=>{
                     console.log(newPost)
+                }) .catch((error)=>{
+                    console.log(error)
                 })
             })
     }
