@@ -7,7 +7,7 @@ import Cards from '../Components/Cards';
 const Comments = ({mobile}) => {
   const [allComment,setAllComments] = useState([]);
   const [post,setPost] = useState({})
-  const BASE_URL = 'https://atg-r2-api.vercel.app/api/'
+  const BASE_URL = 'https://atr-r2-server.onrender.com/api/'
   const [postId,setPostId] = useState(useParams().id)
   const [body, setBody] = useState()
 
