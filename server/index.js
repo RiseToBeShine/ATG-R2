@@ -18,11 +18,6 @@ app.use(cors({
     credentials: true
 }))
 
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://atg-r2-client.vercel.app")
-  next();
-});
-
 const PORT = process.env.PORT || 8800
 
 mongoose.set('strictQuery',true)
