@@ -13,7 +13,7 @@ const app = express()
 
 dotenv.config()
 app.use(cors({
-    origin: '*',
+    origin: 'https://atg-r2-client.vercel.app/',
     methods: ['GET,HEAD,PUT,PATCH,POST,DELETE'],
     credentials: true
 }))
