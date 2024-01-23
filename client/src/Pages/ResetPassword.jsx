@@ -16,7 +16,7 @@ const ResetPassword = () => {
 
     const handleSendPassword = () => {
         setBtnState('Resetting')
-        axios.post(`https://atg-r2-api.vercel.app/api/auth/reset-password/${id}/${token}`, {password: newPassword})
+        axios.post(`https://atr-r2-server.onrender.com/api/auth/reset-password/${id}/${token}`, {password: newPassword})
         .then(res => {
             if(res.data.Status === "Success") {
                 console.log('success')
